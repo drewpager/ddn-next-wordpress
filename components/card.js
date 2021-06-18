@@ -18,13 +18,13 @@ export default function Card({
           <CoverImage ddnYouTube={ddnYouTube} />
         )}
       </div>
-      <div class="w-1/2">
+      <div className="w-1/2">
       <Link as={`/posts/${slug}`} href="/posts/[slug]">
-        <div class="text-3xl font-bold text-white hover:underline">{title}</div>
+        <div className="text-3xl font-bold text-white hover:underline">{title}</div>
       </Link>
-        <div class="text-2xl font-semibold text-white italic"><Date dateString={date} /></div>
-        <div class="text-md font-medium text-white" dangerouslySetInnerHTML={{ __html: excerpt }} />
-        <div class="text-sm font-small text-white m-2"><Avatar author={author} /></div>
+        <div className="text-2xl font-semibold text-white italic"><Date dateString={date} /></div>
+        <div className="text-md font-medium text-white" dangerouslySetInnerHTML={{ __html: excerpt }} />
+        <div className="text-sm font-small text-white m-2"><Avatar author={author} /></div>
       </div>
     </div> 
   )
