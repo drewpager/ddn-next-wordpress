@@ -8,13 +8,13 @@ export default function CoverImage({ ddnYouTube }) {
       allow="picture-in-picture"
       allowFullScreen
       frameBorder="0"
-      width="100%"
-      height="300"
+      width="600px"
+      height="300px"
       src={`https://www.youtube.com/embed/${regex(ddnYouTube)}`}
     />
   )
   return (
-    <div className="sm:mx-0">
+    <div className="md:mx-0">
       {ddnYouTube ? (
         image
       ): (

@@ -2,6 +2,7 @@ import Avatar from '../components/avatar'
 import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import Link from 'next/link'
+import Card from './card'
 
 export default function HeroPost({
   title,
@@ -13,7 +14,13 @@ export default function HeroPost({
 }) {
   return (
     <section>
-      <div className="mb-8 md:mb-16">
+      <Card 
+        title={title} 
+        excerpt={excerpt} 
+        ddnYouTube={ddnYouTube} 
+        author={author} 
+      />
+      {/* <div className="mb-8 md:mb-16">
         {ddnYouTube && (
           <CoverImage ddnYouTube={ddnYouTube} />
         )}
@@ -39,7 +46,7 @@ export default function HeroPost({
           />
           <Avatar author={author} />
         </div>
-      </div>
+      </div> */}
     </section>
   )
 }
