@@ -4,6 +4,6 @@ module.exports = {
     
   },
   env: {
-    WORDPRESS_API_URL: 'http://dailydosenow.test/graphql'
+    WORDPRESS_API_URL: 'https://dailydosenow.com/graphql'
   }
 }
