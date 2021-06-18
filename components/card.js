@@ -12,7 +12,7 @@ export default function Card({
   ddnYouTube
 }) {
   return (
-    <div class="p-6 m-10 max-w-7xl mx-auto bg-accent-ddn border-black rounded-xl flex shadow-md items-center space-x-4">
+    <div className="p-6 m-10 max-w-7xl mx-auto bg-accent-ddn border-black rounded-xl flex shadow-md items-center space-x-4">
       <div className="mb-8 md:mb-4 w-1/2">
         {ddnYouTube && (
           <CoverImage ddnYouTube={ddnYouTube} />

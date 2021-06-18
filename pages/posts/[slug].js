@@ -10,7 +10,6 @@ import Layout from '../../components/layout'
 import { getAllPostsWithSlug, getPostAndMorePosts } from '../../lib/api'
 import PostTitle from '../../components/post-title'
 import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
 import Tags from '../../components/tags'
 
 export default function Post({ post, posts, preview }) {
@@ -32,12 +31,12 @@ export default function Post({ post, posts, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title}
                 </title>
-                <meta
+                {/* <meta
                   property="og:image"
                   content={post.featuredImage?.node?.sourceUrl}
-                />
+                /> */}
               </Head>
               <PostHeader
                 title={post.title}
