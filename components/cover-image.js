@@ -7,14 +7,15 @@ export default function CoverImage({ ddnYouTube }) {
     <iframe
       allow="picture-in-picture"
       allowFullScreen
-      frameBorder="0"
-      width="600px"
-      height="300px"
+      // frameBorder="0"
+      width="100%"
+      height="350px"
       src={`https://www.youtube.com/embed/${regex(ddnYouTube)}`}
+      class="rounded-lg"
     />
   )
   return (
-    <div className="md:mx-0">
+    <div class="md:mx-0 rounded-xl">
       {ddnYouTube ? (
         image
       ): (

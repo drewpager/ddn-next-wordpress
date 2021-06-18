@@ -18,7 +18,8 @@ export default function HeroPost({
         title={title} 
         excerpt={excerpt} 
         ddnYouTube={ddnYouTube} 
-        author={author} 
+        author={author}
+        date={date} 
       />
       {/* <div className="mb-8 md:mb-16">
         {ddnYouTube && (
