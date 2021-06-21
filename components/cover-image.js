@@ -11,11 +11,11 @@ export default function CoverImage({ ddnYouTube }) {
       width="100%"
       height="350px"
       src={`https://www.youtube.com/embed/${regex(ddnYouTube)}`}
-      class="rounded-lg"
+      className="rounded-t-xl"
     />
   )
   return (
-    <div class="md:mx-0 rounded-xl">
+    <div className="md:mx-0 rounded-xl">
       {ddnYouTube ? (
         image
       ): (

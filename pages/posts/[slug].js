@@ -12,7 +12,7 @@ import PostTitle from '../../components/post-title'
 import Head from 'next/head'
 import Tags from '../../components/tags'
 
-export default function Post({ post, posts, preview }) {
+export default function Post({ post, posts }) {
   const router = useRouter()
   const morePosts = posts?.edges
 
@@ -21,7 +21,7 @@ export default function Post({ post, posts, preview }) {
   }
 
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
@@ -33,27 +33,43 @@ export default function Post({ post, posts, preview }) {
                 <title>
                   {post.title}
                 </title>
-                {/* <meta
-                  property="og:image"
-                  content={post.featuredImage?.node?.sourceUrl}
-                /> */}
               </Head>
               <PostHeader
                 title={post.title}
                 ddnYouTube={post.ddnYouTube}
                 date={post.date}
-                author={post.author?.node}
-                categories={post.categories}
+                // author={post.author?.node}
+                // categories={post.categories}
               />
-              <PostBody content={post.content} />
-              <footer>
-                {post.tags.edges.length > 0 && <Tags tags={post.tags} />}
-              </footer>
             </article>
-
-            <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
+          // <>
+          //   <article>
+          //     <Head>
+          //       <title>
+          //         {post.title}
+          //       </title>
+          //       {/* <meta
+          //         property="og:image"
+          //         content={post.featuredImage?.node?.sourceUrl}
+          //       /> */}
+          //     </Head>
+          //     <PostHeader
+          //       title={post.title}
+          //       ddnYouTube={post.ddnYouTube}
+          //       date={post.date}
+          //       author={post.author?.node}
+          //       categories={post.categories}
+          //     />
+          //     <PostBody content={post.content} />
+          //     <footer>
+          //       {/* {post.tags.edges.length > 0 && <Tags tags={post.tags} />} */}
+          //     </footer>
+          //   </article>
+
+          //   <SectionSeparator />
+          //   {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          // </>
         )}
       </Container>
     </Layout>
@@ -74,9 +90,13 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug()
+  
+  const paths = allPosts.edges.map(({ node }) => ({
+    params: { id: `/posts/${node.slug}` },
+  }))
 
   return {
-    paths: allPosts.edges.map(({ node }) => `/posts/${node.slug}`) || [],
+    paths: paths.id || [],
     fallback: true,
   }
 }

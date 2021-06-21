@@ -8,7 +8,6 @@ export default function PostHeader({
   title,
   date,
   author,
-  categories,
   ddnYouTube
 }) {
   return (
@@ -26,8 +25,8 @@ export default function PostHeader({
         </div>
         <div className="mb-6 text-lg">
           Posted <Date dateString={date} />
-          <Categories categories={categories} />
-          <p>Hello {ddnYouTube}  Drew</p>
+          {/* <Categories categories={categories} /> */}
+          {/* <p>Hello {ddnYouTube}  Drew</p> */}
         </div>
       </div>
     </>
